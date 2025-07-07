@@ -220,43 +220,43 @@ $menu = add_menu_item_after($menu, 'home', ['about' => 'About Us']);
 ### Arr Class
 
 **Selection:**
-- `first(array $array)` - Get first element
-- `last(array $array)` - Get last element
+- `first( array $array )` - Get first element
+- `last( array $array )` - Get last element
 
 **Filtering:**
-- `only(array $array, array $keys)` - Keep only specified keys
-- `except(array $array, array $keys)` - Remove specified keys
+- `only( array $array, array $keys)` - Keep only specified keys
+- `except( array $array, array $keys)` - Remove specified keys
 
 **Dot Notation:**
-- `get(array $array, string $path, $default = null)` - Get nested value
-- `set(array $array, string $path, $value)` - Set nested value
-- `has(array $array, string $path)` - Check if nested key exists
+- `get( array $array, string $path, $default = null)` - Get nested value
+- `set( array $array, string $path, $value)` - Set nested value
+- `has( array $array, string $path)` - Check if nested key exists
 
 **Sorting:**
-- `sort_numeric(array $array, bool $desc = false)` - Sort numeric values (with absint)
-- `sort_alphabetic(array $array, bool $desc = false)` - Sort alphabetically
-- `sort_by_key(array $array, bool $desc = false)` - Sort by array keys
-- `sort_by_column(array $array, string $key, bool $desc = false)` - Sort by column
+- `sort_numeric( array $array, bool $desc = false)` - Sort numeric values (with absint)
+- `sort_alphabetic( array $array, bool $desc = false)` - Sort alphabetically
+- `sort_by_key( array $array, bool $desc = false)` - Sort by array keys
+- `sort_by_column( array $array, string $key, bool $desc = false)` - Sort by column
 
 **Data Processing:**
-- `group_by(array $array, string $key)` - Group by key value
-- `pluck(array $array, string $key)` - Extract column values
-- `flatten(array $array, bool $unique = false)` - Flatten multidimensional arrays
+- `group_by( array $array, string $key)` - Group by key value
+- `pluck( array $array, string $key)` - Extract column values
+- `flatten( array $array, bool $unique = false)` - Flatten multidimensional arrays
 
 **Array Manipulation:**
-- `insert_after(array $array, string $key, array $new)` - Insert after key
-- `insert_before(array $array, string $key, array $new)` - Insert before key
-- `shuffle(array $array)` - Shuffle array elements
+- `insert_after( array $array, string $key, array $new)` - Insert after key
+- `insert_before( array $array, string $key, array $new)` - Insert before key
+- `shuffle( array $array)` - Shuffle array elements
 
 **Array Comparison:**
-- `has_all_matches(array $array1, array $array2)` - Check if all elements in array1 exist in array2
-- `has_any_matches(array $array1, array $array2)` - Check if any elements match
+- `has_all_matches( array $array1, array $array2)` - Check if all elements in array1 exist in array2
+- `has_any_matches( array $array1, array $array2)` - Check if any elements match
 
 **Conversion:**
-- `to_string(array $array, string $delimiter = ',')` - Convert to delimited string
+- `to_string( array $array, string $delimiter = ',')` - Convert to delimited string
 
 **WordPress Helpers:**
-- `to_options(array $array)` - Convert to select field format
+- `to_options( array $array)` - Convert to select field format
 - `from_options(array $options)` - Convert from select field format
 
 ## Error Handling
