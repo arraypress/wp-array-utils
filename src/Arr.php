@@ -441,4 +441,16 @@ class Arr {
 		return $array;
 	}
 
+	/**
+	 * Check if a value exists in an array using fast O(1) lookup.
+	 *
+	 * @param array $array  The array to search.
+	 * @param mixed $needle The value to search for.
+	 *
+	 * @return bool True if the value exists in the array.
+	 */
+	public static function contains( array $array, mixed $needle ): bool {
+		return isset( array_flip( $array )[ $needle ] );
+	}
+
 }
