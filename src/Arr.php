@@ -145,6 +145,28 @@ class Arr {
 		return true;
 	}
 
+	/**
+	 * Get a value from an array trying multiple keys in order.
+	 *
+	 * Supports dot notation for nested arrays.
+	 *
+	 * @param array $array   The array to search.
+	 * @param array $keys    Keys to try in order (supports dot notation).
+	 * @param mixed $default Default value if no key is found.
+	 *
+	 * @return mixed The first found value or default.
+	 */
+	public static function get_first( array $array, array $keys, $default = null ) {
+		foreach ( $keys as $key ) {
+			$value = self::get( $array, $key );
+			if ( $value !== null ) {
+				return $value;
+			}
+		}
+
+		return $default;
+	}
+
 	/** Sorting Operations ********************************************************/
 
 	/**
@@ -407,16 +429,23 @@ class Arr {
 	/**
 	 * Convert a key-value array to options format (value/label pairs).
 	 *
-	 * @param array $array The key-value array to convert.
+	 * Supports nested arrays when a label_key is provided.
 	 *
-	 * @return array Array of value/label pairs for select fields.
+	 * @param array  $array     The key-value array to convert.
+	 * @param string $label_key The key to use for the label when values are arrays.
+	 *
+	 * @return array<array{value: string, label: string}> Array of value/label pairs for select fields.
 	 */
-	public static function to_options( array $array ): array {
+	public static function to_options( array $array, string $label_key = '' ): array {
 		$options = [];
+
 		foreach ( $array as $key => $value ) {
+			if ( is_array( $value ) && $label_key ) {
+				$value = $value[ $label_key ] ?? $key;
+			}
 			$options[] = [
-				'value' => $key,
-				'label' => $value
+				'value' => (string) $key,
+				'label' => (string) $value,
 			];
 		}
 
